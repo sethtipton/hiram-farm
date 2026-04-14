@@ -1,0 +1,35 @@
+{
+  "editor.formatOnSave": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/style.css.map": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true,
+    "**/style.css.map": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/vendor/**": true
+  }
+}

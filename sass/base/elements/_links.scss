@@ -1,18 +1,16 @@
-@use "../../abstracts/variables/colors";
-
 a {
-	color: colors.$color__link;
+	color: var(--color-link);
 	text-decoration-thickness: 0.08em;
 	text-underline-offset: 0.15em;
 
 	&:visited {
-		color: colors.$color__link-visited;
+		color: var(--color-link-visited);
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: colors.$color__link-hover;
+		color: var(--color-link-hover);
 	}
 
 	&:focus {

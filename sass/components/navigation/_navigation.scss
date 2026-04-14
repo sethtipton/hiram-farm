@@ -1,28 +1,24 @@
-@use "sass:map";
 @use "../../abstracts/mixins/site-settings";
-@use "../../abstracts/variables/colors";
-@use "../../abstracts/variables/columns";
 @use "../../abstracts/variables/structure";
-@use "../../abstracts/variables/typography";
 
 .main-navigation {
-	padding-bottom: structure.$space__lg;
+	padding-bottom: var(--space-lg);
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
-		padding: structure.$space__xs;
+		padding: var(--space-xs);
 		padding-left: 0;
-		border: structure.$border__base-width solid colors.$color__border-subtle;
-		border-radius: structure.$radius__md;
-		background: colors.$color__background-surface;
+		border: structure.$border__base-width solid var(--color-border-subtle);
+		border-radius: var(--radius-md);
+		background: var(--color-background-surface);
 		box-shadow: structure.$shadow__panel;
 
 		ul {
 			display: grid;
-			margin-top: structure.$space__xxs;
-			padding: structure.$space__xxs 0 0 structure.$space__base;
+			margin-top: var(--space-xxs);
+			padding: var(--space-xxs) 0 0 var(--space-base);
 			border: 0;
 			background: transparent;
 			box-shadow: none;
@@ -53,32 +49,32 @@
 
 	a {
 		display: block;
-		padding: 0.8rem structure.$space__base;
-		color: colors.$color__text-heading;
-		font-size: typography.$font__size-nav;
-		font-weight: typography.$font__weight-semibold;
-		border-radius: structure.$radius__sm;
+		padding: 0.8rem var(--space-base);
+		color: var(--color-text-heading);
+		font-size: var(--font-size-nav);
+		font-weight: var(--font-weight-semibold);
+		border-radius: var(--radius-sm);
 		text-decoration: none;
 		transition: background-color 0.2s ease, color 0.2s ease;
 	}
 
 	a:hover,
 	a:focus {
-		background: colors.$color__background-nav-hover;
-		color: colors.$color__text-heading;
+		background: var(--color-background-nav-hover);
+		color: var(--color-text-heading);
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		background: colors.$color__background-accent;
-		color: colors.$color__text-inverse;
+		background: var(--color-background-accent);
+		color: var(--color-text-inverse);
 	}
 
 	&.toggled ul {
 		display: grid;
-		gap: structure.$space__xxs;
+		gap: var(--space-xxs);
 	}
 }
 
@@ -91,7 +87,7 @@
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-	background: colors.$color__text-strong;
+	background: var(--color-text-strong);
 }
 
 @media screen and (min-width: 37.5em) {
@@ -101,7 +97,7 @@
 	}
 
 	.main-navigation {
-		padding-bottom: structure.$space__xl;
+		padding-bottom: var(--space-xl);
 
 		ul {
 			display: flex;
@@ -120,9 +116,9 @@
 				top: calc(100% + #{structure.$space__xs});
 				left: 0;
 				min-width: structure.$size__submenu-min-width;
-				padding: structure.$space__xs;
-				border: structure.$border__base-width solid colors.$color__border-subtle;
-				background: colors.$color__background-surface;
+				padding: var(--space-xs);
+				border: structure.$border__base-width solid var(--color-border-subtle);
+				background: var(--color-background-surface);
 				box-shadow: structure.$shadow__dropdown;
 
 				ul {
@@ -143,7 +139,7 @@
 .post-navigation {
 
 	.site-main & {
-		margin: structure.$space__xl 0 0;
+		margin: var(--space-xl) 0 0;
 
 		@include site-settings.card-shell(structure.$space__panel-padding);
 	}
@@ -151,29 +147,29 @@
 	.nav-links {
 		display: flex;
 		flex-direction: column;
-		gap: structure.$space__base;
+		gap: var(--space-base);
 	}
 
 	.nav-previous {
-		flex: 1 0 map.get(columns.$columns, 2);
+		flex: 1 0 50%;
 	}
 
 	.nav-next {
 		text-align: end;
-		flex: 1 0 map.get(columns.$columns, 2);
+		flex: 1 0 50%;
 	}
 
 	a {
-		color: colors.$color__text-strong;
-		font-weight: typography.$font__weight-semibold;
+		color: var(--color-text-strong);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.nav-subtitle {
 		display: block;
-		margin-bottom: structure.$space__xxs;
-		color: colors.$color__text-muted;
-		font-size: typography.$font__size-subtitle;
-		letter-spacing: typography.$font__letter-spacing-eyebrow;
+		margin-bottom: var(--space-xxs);
+		color: var(--color-text-muted);
+		font-size: var(--font-size-subtitle);
+		letter-spacing: var(--letter-spacing-eyebrow);
 		text-transform: uppercase;
 	}
 }

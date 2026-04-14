@@ -34,6 +34,14 @@ To work on the site locally:
 - `style.css` is generated from `sass/style.scss` and is committed to the repository.
 - `style-rtl.css` is generated from the current `style.css`.
 
+## Theme Architecture
+
+- Sass source lives in `sass/`.
+- Generated theme CSS lives in `style.css` and `style-rtl.css`.
+- The homepage entry point is `front-page.php`, with homepage-specific content in `template-parts/content-front-page.php`.
+- Shared template parts live in `template-parts/`.
+- This theme is intentionally a lean classic theme foundation. Block theme conversion, plugin-specific integrations, and extra scaffolding are out of scope unless needed later.
+
 ## Development Commands
 
 Install dependencies:
@@ -89,3 +97,4 @@ npm run format
 - Prettier is intentionally limited to Markdown and JSON so it does not fight WordPress lint rules for JS, PHP, CSS, or SCSS.
 - Comments are currently disabled in the theme UI.
 - The current content architecture will likely use ACF for structured fields and flexible content.
+- A short manual verification list lives in `docs/qa-checklist.md`.

@@ -1,7 +1,5 @@
 @use "colors";
 
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
 $size__site-max-width: 70rem;
 $size__content-max-width: 36rem;
 $size__logo-width: clamp(8rem, 18vw, 11rem);
@@ -21,7 +19,6 @@ $space__xxxl: 2.5rem;
 $space__section-bottom: 3rem;
 $space__page-bottom: 4rem;
 $space__panel-padding: 1.25rem;
-$space__panel-padding-lg: 1.5rem;
 $space__panel-padding-fluid: clamp(1.5rem, 3vw, 2.5rem);
 
 $radius__sm: 0.75rem;

@@ -1,5 +1,4 @@
 @use "../../abstracts/mixins/site-settings";
-@use "../../abstracts/variables/colors";
 
 button,
 input[type="button"],
@@ -9,11 +8,11 @@ input[type="submit"] {
 	@include site-settings.button-base;
 
 	&:hover {
-		background: colors.$color__text-strong;
+		background: var(--color-text-strong);
 	}
 
 	&:active,
 	&:focus {
-		background: colors.$color__text-strong;
+		background: var(--color-text-strong);
 	}
 }

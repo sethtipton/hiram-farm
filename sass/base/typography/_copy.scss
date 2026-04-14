@@ -1,10 +1,7 @@
 @use "../../abstracts/mixins/site-settings";
-@use "../../abstracts/variables/colors";
-@use "../../abstracts/variables/structure";
-@use "../../abstracts/variables/typography";
 
 p {
-	margin-bottom: structure.$space__xl;
+	margin-bottom: var(--space-xl);
 }
 
 dfn,
@@ -15,17 +12,17 @@ i {
 }
 
 blockquote {
-	margin: 0 0 structure.$space__xl;
+	margin: 0 0 var(--space-xl);
 }
 
 address {
-	margin: 0 0 structure.$space__xl;
+	margin: 0 0 var(--space-xl);
 }
 
 pre {
-	background: colors.$color__background-pre;
-	font-family: typography.$font__pre;
-	line-height: typography.$font__line-height-pre;
+	background: var(--color-background-pre);
+	font-family: var(--font-family-pre);
+	line-height: var(--line-height-pre);
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -36,18 +33,18 @@ code,
 kbd,
 tt,
 var {
-	font-family: typography.$font__code;
+	font-family: var(--font-family-code);
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted colors.$color__border-abbr;
+	border-bottom: 1px dotted var(--color-border-abbr);
 	cursor: help;
 }
 
 mark,
 ins {
-	background: colors.$color__background-ins;
+	background: var(--color-background-ins);
 	text-decoration: none;
 }
 

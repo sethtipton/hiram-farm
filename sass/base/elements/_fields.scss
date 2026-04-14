@@ -22,8 +22,8 @@ textarea {
 	@include site-settings.form-control-base;
 
 	&:focus {
-		color: colors.$color__text-input-focus;
-		border-color: colors.$color__text-heading-hover;
+		color: var(--color-text-input-focus);
+		border-color: var(--color-text-heading-hover);
 		box-shadow: 0 0 0 3px rgba(colors.$color__border-accent-soft, 0.2);
 	}
 }

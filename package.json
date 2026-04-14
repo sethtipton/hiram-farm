@@ -40,8 +40,6 @@
     "watch": "sass --watch --style=expanded --source-map sass/style.scss:style.css",
     "build": "sass --style=expanded --no-source-map sass/style.scss:style.css && npm run build:rtl",
     "build:rtl": "rtlcss style.css style-rtl.css",
-    "compile:css": "npm run build",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "lint": "npm run lint:scss && npm run lint:js",

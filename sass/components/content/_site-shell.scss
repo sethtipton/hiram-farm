@@ -1,7 +1,5 @@
 @use "../../abstracts/mixins/site-settings";
-@use "../../abstracts/variables/colors";
 @use "../../abstracts/variables/structure";
-@use "../../abstracts/variables/typography";
 
 .site {
 	min-height: 100vh;
@@ -10,8 +8,8 @@
 }
 
 .site-header {
-	background: colors.$color__background-header;
-	border-bottom: structure.$border__base-width solid colors.$color__border-subtle;
+	background: var(--color-background-header);
+	border-bottom: structure.$border__base-width solid var(--color-border-subtle);
 }
 
 .site-branding,
@@ -23,43 +21,43 @@
 }
 
 .site-branding {
-	padding: structure.$space__xxxl 0 structure.$space__lg;
+	padding: var(--space-xxxl) 0 var(--space-lg);
 	text-align: center;
 }
 
 .custom-logo-link {
 	display: inline-block;
-	margin-bottom: structure.$space__base;
+	margin-bottom: var(--space-base);
 }
 
 .custom-logo {
 	display: block;
-	max-width: structure.$size__logo-width;
+	max-width: var(--logo-width);
 	height: auto;
 	margin: 0 auto;
 }
 
 .site-title {
 	margin: 0;
-	font-size: typography.$font__size-site-title;
-	line-height: typography.$font__line-height-tight;
+	font-size: var(--font-size-site-title);
+	line-height: var(--line-height-tight);
 
 	a {
-		color: colors.$color__text-heading;
+		color: var(--color-text-heading);
 		text-decoration: none;
 	}
 
 	a:hover,
 	a:focus {
-		color: colors.$color__text-heading-hover;
+		color: var(--color-text-heading-hover);
 	}
 }
 
 .site-description {
-	margin: structure.$space__sm auto 0;
-	max-width: structure.$size__content-max-width;
-	color: colors.$color__text-muted;
-	font-size: typography.$font__size-body;
+	margin: var(--space-sm) auto 0;
+	max-width: var(--content-max-width);
+	color: var(--color-text-muted);
+	font-size: var(--font-size-body);
 }
 
 .site-main {
@@ -69,14 +67,14 @@
 
 .site-footer {
 	margin-top: auto;
-	background: colors.$color__background-footer;
-	color: colors.$color__text-footer;
+	background: var(--color-background-footer);
+	color: var(--color-text-footer);
 }
 
 .site-footer .site-info {
-	padding: structure.$space__lg 0 structure.$space__xxl;
+	padding: var(--space-lg) 0 var(--space-xxl);
 	text-align: center;
-	font-size: typography.$font__size-meta;
+	font-size: var(--font-size-meta);
 }
 
 .site-footer a {
@@ -85,7 +83,7 @@
 
 .site-footer .sep {
 	display: inline-block;
-	margin: 0 structure.$space__sm;
+	margin: 0 var(--space-sm);
 	opacity: 0.6;
 }
 
@@ -105,7 +103,7 @@
 	}
 
 	.custom-logo {
-		margin: 0 0 structure.$space__base;
+		margin: 0 0 var(--space-base);
 	}
 
 	.site-description {
