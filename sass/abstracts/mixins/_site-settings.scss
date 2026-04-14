@@ -14,7 +14,7 @@
 
 @mixin card-shell($padding: null, $radius: structure.$radius__md, $shadow: structure.$shadow__panel) {
 
-	@if $padding != null {
+	@if $padding {
 		padding: $padding;
 	}
 

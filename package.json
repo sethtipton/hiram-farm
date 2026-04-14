@@ -17,7 +17,7 @@
     "url": "https://github.com/sethtipton/hiram-farm/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
+    "@wordpress/scripts": "^31.8.0",
     "dir-archiver": "^1.1.1",
     "prettier": "^3.6.2",
     "rtlcss": "^3.5.0",
