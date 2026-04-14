@@ -1,3 +1,30 @@
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/structure";
+@use "../../abstracts/variables/typography";
+
+:root {
+	--color-brand-red: #{colors.$color__brand-red};
+	--color-brand-green: #{colors.$color__brand-green};
+	--color-background-body: #{colors.$color__background-body};
+	--color-background-surface: #{colors.$color__background-surface};
+	--color-background-accent: #{colors.$color__background-accent};
+	--color-text-main: #{colors.$color__text-main};
+	--color-text-heading: #{colors.$color__text-heading};
+	--color-text-muted: #{colors.$color__text-muted};
+	--color-border-subtle: #{colors.$color__border-subtle};
+	--space-base: #{structure.$space__base};
+	--space-lg: #{structure.$space__lg};
+	--space-xl: #{structure.$space__xl};
+	--space-xxl: #{structure.$space__xxl};
+	--radius-sm: #{structure.$radius__sm};
+	--radius-md: #{structure.$radius__md};
+	--radius-lg: #{structure.$radius__lg};
+	--site-max-width: #{structure.$size__site-max-width};
+}
+
 body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	background: var(--color-background-body);
+	color: var(--color-text-main);
+	font-family: typography.$font__main;
+	line-height: typography.$font__line-height-body;
 }

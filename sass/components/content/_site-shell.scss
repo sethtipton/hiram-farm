@@ -1,0 +1,114 @@
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/structure";
+@use "../../abstracts/variables/typography";
+
+.site {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-header {
+	background: colors.$color__background-header;
+	border-bottom: structure.$border__base-width solid colors.$color__border-subtle;
+}
+
+.site-branding,
+.main-navigation,
+.site-main,
+.site-footer .site-info {
+
+	@include site-settings.content-width;
+}
+
+.site-branding {
+	padding: structure.$space__xxxl 0 structure.$space__lg;
+	text-align: center;
+}
+
+.custom-logo-link {
+	display: inline-block;
+	margin-bottom: structure.$space__base;
+}
+
+.custom-logo {
+	display: block;
+	max-width: structure.$size__logo-width;
+	height: auto;
+	margin: 0 auto;
+}
+
+.site-title {
+	margin: 0;
+	font-size: typography.$font__size-site-title;
+	line-height: typography.$font__line-height-tight;
+
+	a {
+		color: colors.$color__text-heading;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus {
+		color: colors.$color__text-heading-hover;
+	}
+}
+
+.site-description {
+	margin: structure.$space__sm auto 0;
+	max-width: structure.$size__content-max-width;
+	color: colors.$color__text-muted;
+	font-size: typography.$font__size-body;
+}
+
+.site-main {
+
+	@include site-settings.section-spacing;
+}
+
+.site-footer {
+	margin-top: auto;
+	background: colors.$color__background-footer;
+	color: colors.$color__text-footer;
+}
+
+.site-footer .site-info {
+	padding: structure.$space__lg 0 structure.$space__xxl;
+	text-align: center;
+	font-size: typography.$font__size-meta;
+}
+
+.site-footer a {
+	color: inherit;
+}
+
+.site-footer .sep {
+	display: inline-block;
+	margin: 0 structure.$space__sm;
+	opacity: 0.6;
+}
+
+@media screen and (min-width: 48em) {
+
+	.site-branding,
+	.main-navigation,
+	.site-main,
+	.site-footer .site-info {
+
+		@include site-settings.content-width(structure.$space__gutter-wide);
+	}
+
+	.site-branding {
+		padding-top: structure.$space__section-bottom;
+		text-align: left;
+	}
+
+	.custom-logo {
+		margin: 0 0 structure.$space__base;
+	}
+
+	.site-description {
+		margin-left: 0;
+	}
+}

@@ -4,5 +4,8 @@
 dist/
 node_modules/
 npm-debug.log*
+pnpm-debug.log*
+style.css.map
+vendor/
 yarn-debug.log*
 yarn-error.log*

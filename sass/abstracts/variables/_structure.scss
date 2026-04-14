@@ -1,2 +1,37 @@
+@use "colors";
+
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+$size__site-max-width: 70rem;
+$size__content-max-width: 36rem;
+$size__logo-width: clamp(8rem, 18vw, 11rem);
+$size__submenu-min-width: 14rem;
+
+$space__gutter-mobile: 2rem;
+$space__gutter-wide: 3rem;
+$space__xxs: 0.25rem;
+$space__xs: 0.35rem;
+$space__sm: 0.5rem;
+$space__md: 0.75rem;
+$space__base: 1rem;
+$space__lg: 1.25rem;
+$space__xl: 1.5rem;
+$space__xxl: 2rem;
+$space__xxxl: 2.5rem;
+$space__section-bottom: 3rem;
+$space__page-bottom: 4rem;
+$space__panel-padding: 1.25rem;
+$space__panel-padding-lg: 1.5rem;
+$space__panel-padding-fluid: clamp(1.5rem, 3vw, 2.5rem);
+
+$radius__sm: 0.75rem;
+$radius__md: 1rem;
+$radius__lg: 1.25rem;
+$radius__pill: 999px;
+
+$border__base-width: 1px;
+$border__blockquote-width: 4px;
+
+$shadow__panel: 0 12px 28px colors.$color__shadow-soft;
+$shadow__panel-lg: 0 16px 34px colors.$color__shadow-soft;
+$shadow__dropdown: 0 16px 30px colors.$color__shadow-strong;

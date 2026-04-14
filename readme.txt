@@ -1,7 +1,7 @@
 === Hiram Farm ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: sethtipton
+Tags: custom-logo, custom-menu, featured-images, translation-ready
 
 Requires at least: 4.5
 Tested up to: 5.4
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Hiram Farm.
+Custom WordPress theme for the Hiram Farm site.
 
 == Description ==
 
-Description
+Theme-only repository for the Hiram Farm website, developed locally with the Local app.
 
 == Installation ==
 
@@ -26,14 +26,13 @@ Description
 
 = Does this theme support any plugins? =
 
-Hiram Farm includes support for WooCommerce and for Infinite Scroll in Jetpack.
+The site will likely use ACF for custom fields and structured content.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+= 1.0.0 =
+* Initial project setup
 
 == Credits ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)

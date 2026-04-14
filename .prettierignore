@@ -1,0 +1,8 @@
+*.php
+*.js
+*.css
+*.scss
+*.map
+node_modules
+vendor
+package-lock.json

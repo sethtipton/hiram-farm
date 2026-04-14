@@ -1,78 +1,97 @@
+@use "sass:map";
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/columns";
+@use "../../abstracts/variables/structure";
+@use "../../abstracts/variables/typography";
+
 .main-navigation {
-	display: block;
-	width: 100%;
+	padding-bottom: structure.$space__lg;
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
+		padding: structure.$space__xs;
 		padding-left: 0;
+		border: structure.$border__base-width solid colors.$color__border-subtle;
+		border-radius: structure.$radius__md;
+		background: colors.$color__background-surface;
+		box-shadow: structure.$shadow__panel;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+			display: grid;
+			margin-top: structure.$space__xxs;
+			padding: structure.$space__xxs 0 0 structure.$space__base;
+			border: 0;
+			background: transparent;
+			box-shadow: none;
+			position: static;
 
 			ul {
-				left: -999em;
-				top: 0;
+				margin-top: 0;
+				padding-top: 0;
 			}
 
 			li {
 
 				&:hover > ul,
 				&.focus > ul {
-					display: block;
-					left: auto;
+					display: grid;
 				}
 			}
 
 			a {
-				width: 200px;
+				width: auto;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
 		}
 	}
 
 	li {
 		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
 	}
 
 	a {
 		display: block;
+		padding: 0.8rem structure.$space__base;
+		color: colors.$color__text-heading;
+		font-size: typography.$font__size-nav;
+		font-weight: typography.$font__weight-semibold;
+		border-radius: structure.$radius__sm;
 		text-decoration: none;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	a:hover,
+	a:focus {
+		background: colors.$color__background-nav-hover;
+		color: colors.$color__text-heading;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		background: colors.$color__background-accent;
+		color: colors.$color__text-inverse;
+	}
+
+	&.toggled ul {
+		display: grid;
+		gap: structure.$space__xxs;
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.menu-toggle {
+
+	@include site-settings.button-base;
+
+	width: 100%;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+	background: colors.$color__text-strong;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -81,29 +100,92 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation {
+		padding-bottom: structure.$space__xl;
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 0.4rem;
+			padding: 0;
+			border: 0;
+			background: transparent;
+			box-shadow: none;
+
+			ul {
+				display: none;
+				position: absolute;
+				top: calc(100% + #{structure.$space__xs});
+				left: 0;
+				min-width: structure.$size__submenu-min-width;
+				padding: structure.$space__xs;
+				border: structure.$border__base-width solid colors.$color__border-subtle;
+				background: colors.$color__background-surface;
+				box-shadow: structure.$shadow__dropdown;
+
+				ul {
+					top: 0;
+					left: calc(100% + #{structure.$space__xs});
+				}
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				display: grid;
+			}
+		}
 	}
 }
 
-.comment-navigation,
 .posts-navigation,
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: structure.$space__xl 0 0;
+
+		@include site-settings.card-shell(structure.$space__panel-padding);
 	}
 
 	.nav-links {
 		display: flex;
+		flex-direction: column;
+		gap: structure.$space__base;
 	}
 
 	.nav-previous {
-		flex: 1 0 50%;
+		flex: 1 0 map.get(columns.$columns, 2);
 	}
 
 	.nav-next {
 		text-align: end;
-		flex: 1 0 50%;
+		flex: 1 0 map.get(columns.$columns, 2);
+	}
+
+	a {
+		color: colors.$color__text-strong;
+		font-weight: typography.$font__weight-semibold;
+	}
+
+	.nav-subtitle {
+		display: block;
+		margin-bottom: structure.$space__xxs;
+		color: colors.$color__text-muted;
+		font-size: typography.$font__size-subtitle;
+		letter-spacing: typography.$font__letter-spacing-eyebrow;
+		text-transform: uppercase;
+	}
+}
+
+@media screen and (min-width: 48em) {
+
+	.posts-navigation,
+	.post-navigation {
+
+		.nav-links {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 }

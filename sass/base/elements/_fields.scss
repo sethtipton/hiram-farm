@@ -1,3 +1,7 @@
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/structure";
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -14,20 +18,22 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+
+	@include site-settings.form-control-base;
 
 	&:focus {
-		color: $color__text-input-focus;
+		color: colors.$color__text-input-focus;
+		border-color: colors.$color__text-heading-hover;
+		box-shadow: 0 0 0 3px rgba(colors.$color__border-accent-soft, 0.2);
 	}
 }
 
 select {
-	border: 1px solid $color__border-input;
+
+	@include site-settings.form-control-base(0.75rem 2.5rem 0.75rem structure.$space__base);
+	max-width: 100%;
 }
 
 textarea {
-	width: 100%;
+	min-height: 10rem;
 }

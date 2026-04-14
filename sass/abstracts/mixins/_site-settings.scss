@@ -1,0 +1,78 @@
+@use "../variables/colors";
+@use "../variables/structure";
+@use "../variables/typography";
+
+@mixin content-width($gutter: structure.$space__gutter-mobile) {
+	width: calc(100% - #{$gutter});
+	max-width: structure.$size__site-max-width;
+	margin: 0 auto;
+}
+
+@mixin section-spacing($top: structure.$space__xxl, $bottom: structure.$space__page-bottom) {
+	padding: $top 0 $bottom;
+}
+
+@mixin card-shell($padding: null, $radius: structure.$radius__md, $shadow: structure.$shadow__panel) {
+
+	@if $padding != null {
+		padding: $padding;
+	}
+
+	border: structure.$border__base-width solid colors.$color__border-subtle;
+	border-radius: $radius;
+	background: colors.$color__background-surface;
+	box-shadow: $shadow;
+}
+
+@mixin button-base {
+	display: inline-block;
+	appearance: none;
+	padding: 0.85rem structure.$space__base;
+	border: 0;
+	border-radius: structure.$radius__pill;
+	background: colors.$color__background-accent;
+	color: colors.$color__text-inverse;
+	font-weight: typography.$font__weight-semibold;
+	line-height: 1;
+	text-decoration: none;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	cursor: pointer;
+}
+
+@mixin form-control-base($padding: 0.75rem structure.$space__base) {
+	width: 100%;
+	padding: $padding;
+	border: structure.$border__base-width solid colors.$color__border-input;
+	border-radius: structure.$radius__sm;
+	background: colors.$color__background-surface;
+	color: colors.$color__text-input;
+	font: inherit;
+	line-height: typography.$font__line-height-body;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@mixin content-stack($space: structure.$space__base) {
+
+	> * + * {
+		margin-top: $space;
+	}
+}
+
+@mixin heading-rhythm($size, $line-height: typography.$font__line-height-heading, $space-after: structure.$space__base) {
+	margin: 0 0 $space-after;
+	font-size: $size;
+	line-height: $line-height;
+}
+
+@mixin visually-hidden {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}

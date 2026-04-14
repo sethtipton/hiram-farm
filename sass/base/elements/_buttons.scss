@@ -1,21 +1,19 @@
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+
+	@include site-settings.button-base;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		background: colors.$color__text-strong;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		background: colors.$color__text-strong;
 	}
 }

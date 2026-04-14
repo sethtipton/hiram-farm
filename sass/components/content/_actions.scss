@@ -1,0 +1,43 @@
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/structure";
+@use "../../abstracts/variables/typography";
+
+.button,
+.wp-block-button__link,
+.button-link,
+.text-link {
+	font-weight: typography.$font__weight-semibold;
+}
+
+.button,
+.wp-block-button__link {
+
+	@include site-settings.button-base;
+}
+
+.button:hover,
+.button:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	background: colors.$color__text-strong;
+	color: colors.$color__text-inverse;
+}
+
+.button-link,
+.text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: structure.$space__xxs;
+	color: colors.$color__text-strong;
+	text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus,
+.text-link:hover,
+.text-link:focus {
+	color: colors.$color__text-heading-hover;
+	text-decoration: underline;
+	text-underline-offset: 0.18em;
+}

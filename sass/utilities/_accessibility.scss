@@ -1,26 +1,23 @@
+@use "../abstracts/mixins/site-settings";
+@use "../abstracts/variables/colors";
+@use "../abstracts/variables/typography";
+
 /* Text meant only for screen readers. */
+.visually-hidden,
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
+
+	@include site-settings.visually-hidden;
 
 	&:focus {
-		background-color: $color__background-screen;
+		background-color: colors.$color__background-screen;
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 		clip: auto !important;
 		clip-path: none;
-		color: $color__text-screen;
+		color: colors.$color__text-screen;
 		display: block;
 		font-size: 0.875rem;
-		font-weight: 700;
+		font-weight: typography.$font__weight-bold;
 		height: auto;
 		left: 5px;
 		line-height: normal;

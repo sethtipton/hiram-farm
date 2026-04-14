@@ -15,7 +15,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
 </head>
@@ -39,7 +38,7 @@
 				<?php
 			endif;
 			$hiram_farm_description = get_bloginfo( 'description', 'display' );
-			if ( $hiram_farm_description || is_customize_preview() ) :
+			if ( $hiram_farm_description ) :
 				?>
 				<p class="site-description"><?php echo $hiram_farm_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>

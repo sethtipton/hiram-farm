@@ -1,23 +1,123 @@
+@use "../../abstracts/mixins/site-settings";
+@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/structure";
+@use "../../abstracts/variables/typography";
+
 .sticky {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
+article.post,
+article.page,
+.front-page-entry,
+.no-results.not-found {
+	margin: 0 0 structure.$space__xxl;
+
+	@include site-settings.card-shell(structure.$space__panel-padding-fluid, structure.$radius__lg, structure.$shadow__panel-lg);
 }
 
 .updated:not(.published) {
 	display: none;
 }
 
+.entry-header,
+.front-page-header,
+.page-header {
+	margin-bottom: structure.$space__base;
+}
+
+.entry-title,
+.page-title {
+	margin: 0;
+	font-size: typography.$font__size-entry-title;
+	line-height: typography.$font__line-height-heading;
+}
+
+.entry-title a {
+	color: colors.$color__text-heading;
+	text-decoration: none;
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+	color: colors.$color__text-heading-hover;
+}
+
+.entry-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: structure.$space__xs structure.$space__base;
+	margin-top: structure.$space__md;
+	color: colors.$color__text-muted;
+	font-size: typography.$font__size-meta;
+}
+
+.entry-meta a {
+	color: inherit;
+}
+
+.post-thumbnail {
+	display: block;
+	margin: structure.$space__xl 0;
+	border-radius: structure.$radius__md;
+	overflow: hidden;
+}
+
+.post-thumbnail img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .page-content,
+.front-page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: structure.$space__lg 0 0;
+}
+
+.entry-content > * + *,
+.page-content > * + *,
+.entry-summary > * + * {
+	margin-top: 1em;
+}
+
+.entry-content ul,
+.entry-content ol,
+.page-content ul,
+.front-page-content ul,
+.page-content ol {
+	padding-left: 1.25rem;
+}
+
+.entry-content blockquote,
+.front-page-content blockquote,
+.page-content blockquote {
+	margin: structure.$space__xl 0;
+	padding: structure.$space__base structure.$space__lg;
+	border-left: structure.$border__blockquote-width solid colors.$color__border-accent-soft;
+	background: colors.$color__background-surface-muted;
+}
+
+.entry-footer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: structure.$space__sm structure.$space__base;
+	margin-top: structure.$space__xl;
+	padding-top: structure.$space__base;
+	border-top: structure.$border__base-width solid colors.$color__border-light;
+	color: colors.$color__text-muted;
+	font-size: typography.$font__size-meta;
+}
+
+.entry-footer a {
+	color: colors.$color__text-strong;
 }
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: structure.$space__xl 0 0;
+	padding-top: structure.$space__base;
+	border-top: structure.$border__base-width solid colors.$color__border-light;
+	font-weight: typography.$font__weight-semibold;
 }
